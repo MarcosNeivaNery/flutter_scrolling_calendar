@@ -27,7 +27,7 @@ double getMonthViewHeight(BuildContext context) {
   const double padding = 8.0;
   const double titleHeight = 21.0;
 
-  return (2 * padding) + titleHeight + 8.0 + (6 * getDayNumberSize(context));
+  return (2 * padding) + titleHeight + 8.0 + (10 * getDayNumberSize(context));
 }
 
 /// Gets the vertical space that one year view takes up.
