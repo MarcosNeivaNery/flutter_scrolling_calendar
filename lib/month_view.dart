@@ -46,7 +46,8 @@ class MonthView extends StatelessWidget {
       Color color = Colors.transparent;
       bool isToday = false;
       if (day > 0) {
-        color = getDayNumberColor(DateTime(year, month, day)) ?? daysColor;
+        color =
+            getDayNumberColor(DateTime(year, month, day)) ?? Colors.transparent;
         isToday = true;
       }
 
