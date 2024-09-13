@@ -6,31 +6,24 @@ import 'package:scrolling_years_calendar/year_view.dart';
 
 class ScrollingYearsCalendar extends StatefulWidget {
   ScrollingYearsCalendar({
-    @required this.context,
-    @required this.initialDate,
-    @required this.firstDate,
-    @required this.lastDate,
-    @required this.currentDateColor,
-    this.highlightedDates,
-    this.highlightedDateColor,
-    this.monthNames,
-    this.onMonthTap,
-    this.monthTitleStyle,
-  })  : assert(context != null),
-        assert(initialDate != null),
-        assert(firstDate != null),
-        assert(lastDate != null),
-        assert(!initialDate.isBefore(firstDate),
+    required this.context,
+    required this.initialDate,
+    required this.firstDate,
+    required this.lastDate,
+    required this.currentDateColor,
+    required this.highlightedDates,
+    required this.highlightedDateColor,
+    required this.monthNames,
+    required this.onMonthTap,
+    required this.monthTitleStyle,
+    required this.daysColor,
+  })  : assert(!initialDate.isBefore(firstDate),
             'initialDate must be on or after firstDate'),
         assert(!initialDate.isAfter(lastDate),
             'initialDate must be on or before lastDate'),
         assert(!firstDate.isAfter(lastDate),
             'lastDate must be on or after firstDate'),
-        assert(currentDateColor != null),
-        assert(highlightedDates == null || highlightedDateColor != null,
-            'highlightedDateColor is required if highlightedDates is not null'),
-        assert(
-            monthNames == null || monthNames.length == DateTime.monthsPerYear,
+        assert(monthNames.length == DateTime.monthsPerYear,
             'monthNames must contain all months of the year');
 
   final BuildContext context;
@@ -43,6 +36,7 @@ class ScrollingYearsCalendar extends StatefulWidget {
   final List<String> monthNames;
   final Function onMonthTap;
   final TextStyle monthTitleStyle;
+  final Color daysColor;
 
   @override
   _ScrollingYearsCalendarState createState() => _ScrollingYearsCalendarState();
@@ -60,6 +54,7 @@ class _ScrollingYearsCalendarState extends State<ScrollingYearsCalendar> {
       monthNames: widget.monthNames,
       onMonthTap: widget.onMonthTap,
       monthTitleStyle: widget.monthTitleStyle,
+      daysColor: widget.daysColor,
     );
   }
 

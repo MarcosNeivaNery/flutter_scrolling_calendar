@@ -21,21 +21,7 @@ int getDaysInMonth(int year, int month) {
 
 /// Gets the name of the given month by its number,
 /// using either the supplied or default name.
-String getMonthName(int month, {List<String> monthNames}) {
-  final List<String> names = monthNames ??
-      <String>[
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-      ];
+String getMonthName(int month, {required List<String> monthNames}) {
+  final List<String> names = monthNames;
   return names[month - 1];
 }

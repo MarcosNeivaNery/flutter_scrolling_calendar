@@ -5,14 +5,15 @@ import 'package:scrolling_years_calendar/year_title.dart';
 
 class YearView extends StatelessWidget {
   const YearView({
-    @required this.context,
-    @required this.year,
-    @required this.currentDateColor,
-    this.highlightedDates,
-    this.highlightedDateColor,
-    this.monthNames,
-    this.onMonthTap,
-    this.monthTitleStyle,
+    required this.context,
+    required this.year,
+    required this.currentDateColor,
+    required this.highlightedDates,
+    required this.highlightedDateColor,
+    required this.monthNames,
+    required this.onMonthTap,
+    required this.monthTitleStyle,
+    required this.daysColor,
   });
 
   final BuildContext context;
@@ -23,6 +24,7 @@ class YearView extends StatelessWidget {
   final List<String> monthNames;
   final Function onMonthTap;
   final TextStyle monthTitleStyle;
+  final Color daysColor;
 
   double get horizontalMargin => 16.0;
   double get monthViewPadding => 8.0;
@@ -44,6 +46,7 @@ class YearView extends StatelessWidget {
           monthNames: monthNames,
           onTap: onMonthTap,
           titleStyle: monthTitleStyle,
+          daysColor: daysColor,
         ),
       );
 
@@ -85,7 +88,7 @@ class YearView extends StatelessWidget {
               right: horizontalMargin,
               top: 8.0,
             ),
-            child: Divider(
+            child: const Divider(
               color: Colors.black26,
             ),
           ),
