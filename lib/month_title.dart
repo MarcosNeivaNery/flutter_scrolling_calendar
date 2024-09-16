@@ -3,8 +3,8 @@ import 'package:scrolling_years_calendar/utils/dates.dart';
 
 class MonthTitle extends StatelessWidget {
   const MonthTitle({
-    @required this.month,
-    this.monthNames,
+    required this.month,
+    required this.monthNames,
     this.style = const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w600,

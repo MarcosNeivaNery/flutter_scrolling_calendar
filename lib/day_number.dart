@@ -3,12 +3,16 @@ import 'package:scrolling_years_calendar/utils/screen_sizes.dart';
 
 class DayNumber extends StatelessWidget {
   const DayNumber({
-    @required this.day,
-    this.color,
+    required this.day,
+    required this.color,
+    required this.isToday,
+    required this.daysColor,
   });
 
   final int day;
   final Color color;
+  final bool isToday;
+  final Color daysColor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class DayNumber extends StatelessWidget {
       width: size,
       height: size,
       alignment: Alignment.center,
-      decoration: color != null
+      decoration: isToday
           ? BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(size / 2),
@@ -28,7 +32,7 @@ class DayNumber extends StatelessWidget {
         day < 1 ? '' : day.toString(),
         textAlign: TextAlign.center,
         style: TextStyle(
-          color: color != null ? Colors.white : Colors.black87,
+          color: daysColor,
           fontSize: screenSize(context) == ScreenSizes.small ? 8.0 : 10.0,
           fontWeight: FontWeight.normal,
         ),
